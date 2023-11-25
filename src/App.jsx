@@ -1,9 +1,9 @@
 import "./styles/App.css";
+import shopMateLogo from "./assets/shopmate-logo.svg";
 import ItemList from "./components/ItemList";
 import ItemInput from "./components/ItemInput";
 import { useState, useEffect } from "react";
 import { getAll, create } from "./api/api.js";
-
 
 function App() {
   const [items, setItems] = useState([]);
@@ -24,6 +24,10 @@ function App() {
 
   return (
     <>
+      <div className="flex justify-center">
+        <img src={shopMateLogo} alt="ShopMate Logo" 
+        className="w-auto h-60"/>
+      </div>
       <ItemList items={items} fetchData={fetchData} />
       <ItemInput onAddItem={addItem} />
     </>

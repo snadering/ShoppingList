@@ -1,13 +1,31 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import ConfirmModal from "./ConfirmModal";
 
 function ItemInput({ onAddItem }) {
   const nameRef = useRef(null);
   const priceRef = useRef(null);
   const quantityRef = useRef(null);
 
+  const [showModal, setShowModal] = useState(false);
+
+  function handleModal(){
+    if(quantityRef.current.value >= 10){
+      setShowModal(true);
+    } else {
+      handleSubmit();
+    } 
+  }
+
+  function handleDecline() {
+    setShowModal(false);
+    quantityRef.current.value = "";
+    quantityRef.current.focus();
+  }
+
   //Add new item to the itemlist useState in app.jsx
   function handleSubmit() {
+    setShowModal(false);
     if (nameRef.current.value && priceRef.current.value) {
       const newItem = {
         name: nameRef.current.value,
@@ -25,6 +43,7 @@ function ItemInput({ onAddItem }) {
 
   return (
     <>
+    {showModal && <ConfirmModal onConfirm={handleSubmit} onDecline={handleDecline} />}
       <div className="flex flex-col md:flex-row lg justify-evenly p-5">
         {/* 1st Line: name */}
         <div className="flex flex-col text-center">
@@ -81,7 +100,7 @@ function ItemInput({ onAddItem }) {
       {/* 3rd Line: Button */}
       <div className="flex justify-center mt-5">
         <button
-          onClick={handleSubmit}
+          onClick={handleModal}
           className="bg-bluegreen-500 hover:bg-bluegreen-600 text-navy-600 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline"
           type="button"
         >
