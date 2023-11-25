@@ -1,7 +1,5 @@
-# React + Vite
-
-# Shopping List
-## (Made as proof of concept)
+# ShopMate
+#### (Made as proof of concept using React + Vite)
 You can add an item to the shopping list by filling in the input fields and clicking add.
 The item is then stored in a json-server which is basically just writing to a file that imitates a database.
 CRUD operations is then being used to handle the data (items).
