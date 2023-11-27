@@ -27,4 +27,4 @@ RUN npm install -g serve
 EXPOSE 3000
 
 # CMD ["pm2-runtime", "serve", "dist", "3000", "--spa"]
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
