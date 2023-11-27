@@ -151,24 +151,6 @@ function Item({ item, onRemoveItem, fetchData }) {
     </tr>
   );
 
-  /*
-  return (
-    <tr className="border">
-        <td className="border border-l-2 border-black px-4 py-2">{item.id}</td>
-        <td className="border border-black px-4 py-2">{item.name}</td>
-        <td className="border border-black px-4 py-2">{item.quantity}</td>
-        <td className="border border-black px-4 py-2">{item.price}</td>
-        <td className="px-4 py-2 flex justify-center">
-          <button onClick={() => onUpdateItem(item.id)} className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-3 rounded">
-            Edit
-          </button>
-          <button onClick={() => onRemoveItem(item.id)} className="bg-red-400 hover:bg-red-600 text-white font-bold px-4 py-2 ml-2 rounded">
-            Remove
-          </button>
-        </td>
-      </tr>
-  );
-  */
 }
 
 export default Item;
