@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install 'concurrently' globally
+RUN npm install -g concurrently
+
 # Copy the rest of the application code to the container
 COPY . .
 
