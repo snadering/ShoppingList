@@ -1,5 +1,5 @@
 # Use the official Node image as a base image
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Install 'concurrently' globally
-RUN npm install -g concurrently
+RUN npm install concurrently
 
 # Copy the rest of the application code to the container
 COPY . .
@@ -24,7 +24,7 @@ RUN npm install -g serve
 # RUN npm install -g pm2
 
 # Expose the port that your app is running on
-EXPOSE 3000
+EXPOSE 5173
 
 # CMD ["pm2-runtime", "serve", "dist", "3000", "--spa"]
 CMD ["npm", "run", "dev"]
