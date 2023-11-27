@@ -24,7 +24,7 @@ RUN npm install -g serve
 # RUN npm install -g pm2
 
 # Expose the port that your app is running on
-EXPOSE 5173
+EXPOSE 3000
 
 # CMD ["pm2-runtime", "serve", "dist", "3000", "--spa"]
 CMD ["npm", "run", "dev"]
