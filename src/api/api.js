@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const URL = "http://shopmate.skr.dk:3001/api/";
+const BASE_URL = "http://shopmate.skr.dk";
+const API_PATH = "/api";
+const URL = BASE_URL + API_PATH;
 
 export async function getAll() {
   return await fetchData("GET", URL);
